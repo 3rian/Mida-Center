@@ -1,8 +1,13 @@
+/* ------------------------------
+   BRENDAFLIX - LOGIN CUSTOM
+------------------------------ */
+
+/* Logo imagem (substitui o texto) */
 .pageTitle{
   font-size: 0;
   text-align: center;
   height: 80px;
-  background-image: url("https://raw.githubusercontent.com/3rian/Mida-Center/refs/heads/main/logo.png"); /* use nome simples */
+  background-image: url("https://raw.githubusercontent.com/3rian/Mida-Center/refs/heads/main/logo.png"); /* use nome sem acentos */
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
@@ -10,124 +15,133 @@
   max-width: 300px;
   width: 100%;
 }
-
 .pageTitle::after {
   content: none;
 }
 
-
-/* Fundo */
-
+/* Fundo com a arte */
 #loginPage,
 #loginPage .backgroundContainer{
   background:
-  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-  url("/web/backgrounds/BrendaFlix.png") center center / cover no-repeat fixed;
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), /* escurece um pouco para destacar o formulário */
+    url("/web/backgrounds/BrendaFlix.png") center center / cover no-repeat fixed;
 }
 
-
-/* Container login */
-
+/* Container do formulário – reposicionado mais abaixo */
 #loginPage .readOnlyContent,
 #loginPage form{
-  max-width:22em;
-  margin-top:200px;
-  background:rgba(0,0,0,0.75);
-  padding:30px;
-  border-radius:14px;
-  backdrop-filter:blur(10px);
-  box-shadow:0 10px 40px rgba(0,0,0,0.6);
+  max-width: 22em;
+  margin-top: 280px;              /* AUMENTE ou DIMINUA este valor conforme necessário */
+  margin-bottom: 40px;
+  background: rgba(0,0,0,0.75);
+  padding: 30px;
+  border-radius: 14px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-
-/* Esconder textos padrão */
-
-#loginPage h1{
-  display:none;
-}
-
-
-/* Esconder botões extras */
-
+/* Esconder textos padrão e botões indesejados */
+#loginPage h1,
 #loginPage .btnManual,
 #loginPage .btnForgotPassword{
   display:none;
 }
 
-
-/* Campos usuário e senha */
-
+/* Campos de entrada */
 #loginPage input{
-  background:rgba(20,20,20,0.9);
-  border:1px solid rgba(255,255,255,0.15);
-  color:white;
-  border-radius:8px;
-  padding:12px;
-  transition:0.2s;
+  background: rgba(20,20,20,0.9);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: white;
+  border-radius: 8px;
+  padding: 14px;                  /* um pouco maior para melhor toque */
+  font-size: 16px;
+  transition: 0.2s;
 }
-
-
-/* Placeholder */
 
 #loginPage input::placeholder{
-  color:rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.5);
+  font-weight: 400;
 }
-
-
-/* Focus */
 
 #loginPage input:focus{
-  border-color:#e50914;
-  box-shadow:0 0 8px rgba(229,9,20,0.6);
-  outline:none;
+  border-color: #e50914;
+  box-shadow: 0 0 12px rgba(229,9,20,0.6);
+  outline: none;
+  background: rgba(30,30,30,0.9);
 }
-
-
-/* Botão login */
-
-#loginPage .btnLogin{
-  background:#e50914;
-  border-radius:8px;
-  font-weight:600;
-  letter-spacing:1px;
-  transition:0.2s;
-}
-
-
-/* Hover botão */
-
-#loginPage .btnLogin:hover{
-  background:#ff1f2f;
-  transform:scale(1.03);
-}
-
 
 /* Labels */
-
 #loginPage label{
-  color:rgba(255,255,255,0.85);
-  font-weight:500;
+  color: rgba(255,255,255,0.9);
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
 }
 
+/* Botão de login – ESTILIZAÇÃO REFINADA */
+#loginPage .btnLogin{
+  background: linear-gradient(145deg, #e50914, #b00610); /* gradiente sutil */
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 1.2px;
+  padding: 14px 20px;
+  color: white;
+  text-transform: uppercase;
+  box-shadow: 0 8px 20px rgba(229,9,20,0.4);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+#loginPage .btnLogin:hover{
+  background: linear-gradient(145deg, #ff1f2f, #c00914);
+  transform: translateY(-2px) scale(1.02); /* leve elevação e aumento */
+  box-shadow: 0 12px 28px rgba(229,9,20,0.6);
+}
+
+#loginPage .btnLogin:active{
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 12px rgba(229,9,20,0.5);
+}
+
+/* Opcional: se quiser adicionar um link de "Esqueceu a senha?" estilizado */
+/*
+#loginPage .btnForgotPassword{
+  display: block;
+  margin-top: 15px;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+#loginPage .btnForgotPassword:hover{
+  color: #e50914;
+  text-decoration: underline;
+}
+*/
 
 /* ------------------------------
    MOBILE FIX (vertical)
 ------------------------------ */
-
 @media (max-width:600px){
-
-  /* Ajuste do logo para mobile */
   .pageTitle {
-    height: 60px; /* altura menor para telas pequenas */
-    max-width: 220px;
-    margin-bottom: 15px;
+    height: 60px;
+    max-width: 200px;
   }
 
-  /* Ajustes no formulário */
   #loginPage .readOnlyContent,
   #loginPage form{
-    margin-top: 120px;
-    padding: 24px;
+    margin-top: 180px;            /* menor que desktop, mas ainda afastado do topo */
+    padding: 20px;
   }
 
+  #loginPage .btnLogin {
+    font-size: 16px;
+    padding: 12px;
+  }
 }
