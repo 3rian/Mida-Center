@@ -1,21 +1,18 @@
-/* ------------------------------
-   BRENDAFLIX - LOGIN CUSTOM
------------------------------- */
-
-/* Logo texto */
-
 .pageTitle{
-  font-size:0;
-  text-align:center;
+  font-size: 0;
+  text-align: center;
+  height: 80px;
+  background-image: url("https://raw.githubusercontent.com/3rian/Mida-Center/refs/heads/main/logo.png"); /* use nome simples */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin: 0 auto 20px auto;
+  max-width: 300px;
+  width: 100%;
 }
 
-.pageTitle::after{
-  content:"BrendaFlix";
-  font-size:38px;
-  font-weight:800;
-  color:#e50914;
-  letter-spacing:3px;
-  text-transform:uppercase;
+.pageTitle::after {
+  content: none;
 }
 
 
@@ -114,20 +111,23 @@
 
 
 /* ------------------------------
-   MOBILE FIX
+   MOBILE FIX (vertical)
 ------------------------------ */
 
 @media (max-width:600px){
 
-  .pageTitle::after{
-    font-size:26px;
-    letter-spacing:2px;
+  /* Ajuste do logo para mobile */
+  .pageTitle {
+    height: 60px; /* altura menor para telas pequenas */
+    max-width: 220px;
+    margin-bottom: 15px;
   }
 
+  /* Ajustes no formulário */
   #loginPage .readOnlyContent,
   #loginPage form{
-    margin-top:120px;
-    padding:24px;
+    margin-top: 120px;
+    padding: 24px;
   }
 
 }
