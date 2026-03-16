@@ -1,0 +1,133 @@
+/* ------------------------------
+   BRENDAFLIX - LOGIN CUSTOM
+------------------------------ */
+
+/* Logo texto */
+
+.pageTitle{
+  font-size:0;
+  text-align:center;
+}
+
+.pageTitle::after{
+  content:"BrendaFlix";
+  font-size:38px;
+  font-weight:800;
+  color:#e50914;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+
+/* Fundo */
+
+#loginPage,
+#loginPage .backgroundContainer{
+  background:
+  linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+  url("/web/backgrounds/BrendaFlix.png") center center / cover no-repeat fixed;
+}
+
+
+/* Container login */
+
+#loginPage .readOnlyContent,
+#loginPage form{
+  max-width:22em;
+  margin-top:200px;
+  background:rgba(0,0,0,0.75);
+  padding:30px;
+  border-radius:14px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 10px 40px rgba(0,0,0,0.6);
+}
+
+
+/* Esconder textos padrão */
+
+#loginPage h1{
+  display:none;
+}
+
+
+/* Esconder botões extras */
+
+#loginPage .btnManual,
+#loginPage .btnForgotPassword{
+  display:none;
+}
+
+
+/* Campos usuário e senha */
+
+#loginPage input{
+  background:rgba(20,20,20,0.9);
+  border:1px solid rgba(255,255,255,0.15);
+  color:white;
+  border-radius:8px;
+  padding:12px;
+  transition:0.2s;
+}
+
+
+/* Placeholder */
+
+#loginPage input::placeholder{
+  color:rgba(255,255,255,0.5);
+}
+
+
+/* Focus */
+
+#loginPage input:focus{
+  border-color:#e50914;
+  box-shadow:0 0 8px rgba(229,9,20,0.6);
+  outline:none;
+}
+
+
+/* Botão login */
+
+#loginPage .btnLogin{
+  background:#e50914;
+  border-radius:8px;
+  font-weight:600;
+  letter-spacing:1px;
+  transition:0.2s;
+}
+
+
+/* Hover botão */
+
+#loginPage .btnLogin:hover{
+  background:#ff1f2f;
+  transform:scale(1.03);
+}
+
+
+/* Labels */
+
+#loginPage label{
+  color:rgba(255,255,255,0.85);
+  font-weight:500;
+}
+
+
+/* ------------------------------
+   MOBILE FIX
+------------------------------ */
+
+@media (max-width:600px){
+
+  .pageTitle::after{
+    font-size:26px;
+    letter-spacing:2px;
+  }
+
+  #loginPage .readOnlyContent,
+  #loginPage form{
+    margin-top:120px;
+    padding:24px;
+  }
+
+}
