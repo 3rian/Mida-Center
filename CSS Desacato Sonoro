@@ -1,0 +1,278 @@
+/* =========================
+
+   RESET JELLYFIN (CORRETO)
+
+========================= */
+
+.backdropImage {
+
+  display: none !important;
+
+}
+
+
+
+/* remove apenas o logo */
+
+.headerLogo,
+
+.headerTitle,
+
+.pageTitleWithDefaultLogo {
+
+  display: none !important;
+
+}
+
+
+
+/* NÃO remover .skinHeader */
+
+
+
+/* =========================
+
+   BASE LOGIN
+
+========================= */
+
+#loginPage {
+
+  background: none !important;
+
+  position: relative;
+
+  min-height: 100vh;
+
+}
+
+
+
+/* =========================
+
+   LOGO CUSTOM (FUNCIONA 100%)
+
+========================= */
+
+#loginPage::after {
+
+  content: "DESACATO SONORO";
+
+  position: fixed;
+
+  top: 80px;
+
+  left: 50%;
+
+  transform: translateX(-50%) rotate(-1deg);
+
+
+
+  font-size: 34px;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+
+
+
+  color: #ddd;
+
+  z-index: 9999;
+
+  text-align: center;
+
+
+
+  text-shadow:
+
+    2px 2px 0 #000,
+
+    -2px -2px 0 #000,
+
+    0 0 12px rgba(139,0,0,0.8);
+
+}
+
+
+
+/* =========================
+
+   FUNDO (FUNCIONAL + BONITO)
+
+========================= */
+
+/* =========================
+   FUNDO (CORRIGIDO)
+========================= */
+.backgroundContainer {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Garante que fique atrás de tudo */
+  
+  background-image: url('https://thoughtswordsaction.com/wp-content/uploads/2024/03/a2636494481_10-e1710337414675.jpg?w=1024') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+
+  filter: grayscale(100%) contrast(120%) brightness(90%);
+  display: block !important;
+}
+
+/* camada escura equilibrada */
+.backgroundContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* textura crust leve */
+.backgroundContainer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('');
+  opacity: 0.2;
+  mix-blend-mode: overlay;
+  z-index: 2;
+}
+
+/* =========================
+
+   VINHETA (cinematográfica)
+
+========================= */
+
+#loginPage::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: radial-gradient(circle, transparent 50%, rgba(0,0,0,0.7) 100%);
+
+  pointer-events: none;
+
+  z-index: 1;
+
+}
+
+
+
+/* =========================
+
+   CARD LOGIN
+
+========================= */
+
+#loginPage .card {
+
+  position: relative;
+
+  z-index: 2;
+
+  background: rgba(0, 0, 0, 0.65) !important;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(6px);
+
+  box-shadow: 0 0 25px rgba(0,0,0,0.9);
+
+}
+
+
+
+/* =========================
+
+   TEXTO
+
+========================= */
+
+body, h1, h2, h3, label {
+
+  color: #ddd !important;
+
+  letter-spacing: 1px;
+
+}
+
+
+
+/* =========================
+
+   INPUTS
+
+========================= */
+
+input {
+
+  background: rgba(20,20,20,0.85) !important;
+
+  border: 1px solid #333 !important;
+
+  color: #eee !important;
+
+}
+
+
+
+/* =========================
+
+   BOTÃO
+
+========================= */
+
+button {
+
+  background: #1a1a1a !important;
+
+  border: 1px solid #550000 !important;
+
+  color: #eee !important;
+
+  transition: all 0.2s ease;
+
+}
+
+
+
+button:hover {
+
+  background: #2a0000 !important;
+
+  box-shadow: 0 0 12px rgba(139,0,0,0.6);
+
+}
+
+
+
+/* =========================
+
+   FLICKER LEVE (NÃO QUEBRA FUNDO)
+
+========================= */
+
+@keyframes flicker {
+
+  0%, 100% { opacity: 1; }
+
+  50% { opacity: 0.92; }
+
+}
+
+
+
+.backgroundContainer {
+
+  animation: flicker 8s infinite;
+
+}
