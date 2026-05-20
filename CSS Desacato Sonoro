@@ -30,9 +30,9 @@
     z-index: 1;
 }
 
-/* 3. LOGO DESACATO SONORO (ESTILO ISOLADO) */
+/* 3. LOGO DESACATO (ESTILO ISOLADO) */
 #loginPage::after {
-    content: "DESACATO SONORO" !important;
+    content: "DESACATO" !important;
     position: fixed !important;
     top: 10% !important;
     left: 50% !important;
